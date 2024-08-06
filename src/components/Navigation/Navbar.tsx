@@ -2,6 +2,7 @@ import Link from 'next/link'
 import React from 'react'
 import Icons from '../global/icons'
 import { buttonVariants } from '../ui/button';
+import Image from 'next/image';
 
 export const Navbar = () => {
     const user = false;
@@ -10,7 +11,8 @@ export const Navbar = () => {
         <div className="flex items-center justify-between h-full mx-auto md:max-w-screen-xl">
             <div className="flex items-start ">
                 <Link href={"/"} className='flex items-center gap-2'>
-                <Icons.logo  className='w-8 h-8 '/>
+                {/* <Icons.logo  className='w-8 h-8 '/> */}
+                <Image src="/icons/Logo.png" alt='icon' width={40} height={40} className='rounded-md'/>
                 <span className='text-lg font-medium'>Luffy</span>
                 </Link>
             </div>
@@ -35,10 +37,10 @@ export const Navbar = () => {
            <div className="flex items-center gap-4">
             {user?("User Button"):(
                 <>
-                <Link href="sign-in" className={buttonVariants({size:"sm", variant:"ghost"})}>Login
+                <Link href="#" className={buttonVariants({size:"sm", variant:"ghost"})}>Login
                 </Link>
 
-                <Link href="sign-up" className={buttonVariants({size:"sm", className:""})}>Start Free Trail
+                <Link href="#" className={buttonVariants({size:"sm", className:""})}>Start Free Trail
                 </Link>
                 </>
             )}
